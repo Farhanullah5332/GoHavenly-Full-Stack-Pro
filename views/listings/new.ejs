@@ -1,0 +1,75 @@
+<% layout("/layouts/boilarplate") %>
+
+  <div class="flex justify-center px-10 pb-4 pt-8">
+    <div class="w-full max-w-2xl">
+      <h2 class="text-center text-2xl font-bold">Create New Listing</h2>
+
+      <form id="listingForm" action="/listings" method="post" class="space-y-6" enctype="multipart/form-data">
+        <!-- Title Input -->
+        <div>
+          <label for="title" class="block text-sm font-semibold mb-2">Title</label>
+          <input type="text" id="title" name="title" placeholder="Enter title" minlength="5" maxlength="50" required
+            class="editField" />
+        </div>
+        <!-- Description Input -->
+        <div>
+          <label for="description" class="block text-sm font-semibold mb-2">Description</label>
+          <textarea id="description" name="description" placeholder="Enter description" rows="3" minlength="20" required
+            maxlength="200"
+            class="editField"></textarea>
+        </div>
+        <div class="flex flex-wrap gap-6">
+          <!-- Image Upload -->
+          <div class="flex-1 min-w-[250px]">
+            <label for="imageInput" class="block text-sm font-semibold mb-2">Upload Image</label>
+            <input type="file" id="imageInput" name="image" accept="image/jpeg, image/jpg, image/png" required
+              class="editField" />
+          </div>
+
+          <!-- Category Selection -->
+          <div class="w-full sm:w-[200px]">
+            <label for="categorySelect" class="block text-sm font-semibold mb-2">Category</label>
+            <select id="categorySelect" name="category"
+              class="editField" required>
+              <option value="" selected disabled>Select a category</option>
+              <option value="Trending">Trending</option>
+              <option value="Rooms">Rooms</option>
+              <option value="Iconic Cities">Iconic Cities</option>
+              <option value="Castles">Castles</option>
+              <option value="Arctic">Arctic</option>
+              <option value="Camping">Camping</option>
+              <option value="Farms">Farms</option>
+              <option value="Beach">Beach</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-6">
+          <!-- Price Input -->
+          <div class="flex-1 min-w-[200px]">
+            <label for="price" class="block text-sm font-semibold mb-2">Price</label>
+            <input type="number" id="price" name="price" placeholder="Enter price" min="1" max="10000" required
+              class="editField" />
+          </div>
+          <!-- Location Input -->
+          <div class="flex-1 min-w-[200px]">
+            <label for="location" class="block text-sm font-semibold mb-2">Location</label>
+            <input type="text" id="location" name="location" placeholder="Enter location" required
+              class="editField" />
+          </div>
+
+          <!-- Country Input -->
+          <div class="flex-1 min-w-[200px]">
+            <label for="country" class="block text-sm font-semibold mb-2">Country</label>
+            <input type="text" id="country" name="country" placeholder="Enter country" required
+              class="editField" />
+          </div>
+        </div>
+        <div class="flex justify-end">
+          <button type="submit"
+            class="button-effect bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold py-2 px-6 rounded-md transition duration-300 mb-6">
+            Create
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>

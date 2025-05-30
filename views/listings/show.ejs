@@ -1,0 +1,165 @@
+<% layout("/layouts/boilarplate") %>
+
+    <div class="mx-auto pb-3 pt-8  max-w-2xl  px-5">
+        <h2 class="text-2xl  font-bold text-gray-800 text-center m-2">
+            <%= listing.title %>
+        </h2>
+        <div class="  bg-white rounded-lg shadow-lg overflow-hidde ">
+            <div class="relative overflow-hidden h-58 sm:h-88">
+                <img src="<%= listing.image.url %>" alt="Sunset Beach House" class="w-full h-full object-cover rounded-t-lg">
+                <div class="absolute top-4 right-4">
+                    <span class="badge text-xs text-white px-2 py-1 rounded-full">
+                        <%= listing.category %>
+                    </span>
+                </div>
+            </div>
+            <div class="p-2 sm:px-4  flex items-center justify-between">
+                <div>
+                    <span class=" font-semibold ">Owned By:</span>
+                    <span class=" text-gray-800 italic">
+                        <%= listing.owner.username %>
+                    </span>
+                </div>
+            </div>
+            <div class="p-2  sm:px-4">
+                <h3 class="text-gray-800">
+                    <%= listing.description %>
+                </h3>
+
+                <div class="mt-4 flex items-center justify-between">
+                    <div>
+                        <span class="text-lg font-bold text-gray-800">
+                            &dollar;<%= listing.price %>
+                        </span>
+                        <span class="text-gray-500">/night</span>
+                    </div>
+                    <div>
+                        <span class="sm:text-lg font-bold text-gray-800">
+                            <%= listing.location %>, <%= listing.country %>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% if (currentUser && listing.owner._id.equals(currentUser._id)) { %>
+
+
+            <div class="flex justify-center space-x-6 mt-5 mb-12">
+                <div>
+                    <button
+                        class="button-effect bg-gradient-to-r from-blue-600 to-blue-500 text-white  px-3 py-1 rounded-md"><a
+                            href="/listings/<%= listing._id %>/edit">Edit</a></button>
+                </div>
+                <div>
+                    <form action="/listings/<%= listing._id %>?_method=delete" method="post">
+                        <button
+                            class="button-effect bg-gradient-to-l from-red-600 to-red-500 text-white  px-3 py-1 rounded-md">Delete</button>
+                    </form>
+
+                </div>
+            </div>
+            <hr>
+            <% } %>
+
+                <% if (currentUser) { %>
+
+
+
+                    <div>
+                        <h2 class="text-2xl font-semibold text-center m-4">Share your feedback!</h2>
+                        <form action="/listings/<%= listing._id %>/reviews" method="post">
+                            <!-- Star Rating -->
+                            <p for="rating" class="font-semibold">Rate this:</p>
+                            <fieldset class="starability-slot">
+                                <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked
+                                    aria-label="No rating." required />
+                                <input type="radio" id="first-rate1" name="rating" value="1" />
+                                <label for="first-rate1" title="Terrible">1 star</label>
+                                <input type="radio" id="first-rate2" name="rating" value="2" />
+                                <label for="first-rate2" title="Not good">2 stars</label>
+                                <input type="radio" id="first-rate3" name="rating" value="3" />
+                                <label for="first-rate3" title="Average">3 stars</label>
+                                <input type="radio" id="first-rate4" name="rating" value="4" />
+                                <label for="first-rate4" title="Very good">4 stars</label>
+                                <input type="radio" id="first-rate5" name="rating" value="5" />
+                                <label for="first-rate5" title="Amazing">5 stars</label>
+                            </fieldset>
+                            <div>
+                                <label for="textArea" class="block text-sm font-semibold ">Leave a comment:</label>
+                                <textarea id="textArea" name="reviewText" placeholder="Write your review..." rows="3"
+                                    required minlength="10" maxlength="200"
+                                    class="w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder:text-gray-500 placeholder:italic"></textarea>
+                            </div>
+
+                            <button
+                                class="button-effect bg-gradient-to-r from-blue-600 to-blue-500 text-white self-end  px-3 py-1 rounded-md my-2">Submit</button>
+                        </form>
+
+                    </div>
+                    <hr>
+                    <% } else { %>
+                        <div class="text-center pt-16 pb-4 ">
+                            <p class="text-2xl font-semibold text-center m-4">Please login to leave a review.</p>
+                            <a href="/login" class="btn btn-info"><button
+                                    class="button-effect bg-gradient-to-r from-blue-600 to-blue-500 text-white self-end  px-3 py-1 rounded-md my-2">Log
+                                    in</button></a>
+                            <a href="/signup" class="btn btn-info ms-2"><button
+                                    class="button-effect bg-gradient-to-r from-blue-600 to-blue-500 text-white self-end  px-3 py-1 rounded-md my-2">Sign
+                                    up</button></a>
+                        </div>
+                         <hr />
+                        <% } %>
+
+                            <h2 class="text-2xl font-semibold text-center m-4">All Review</h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                                <% if (listing.reviews.length> 0) { %>
+                                    <% for (let review of listing.reviews) { %>
+                                        <div class="bg-white border border-gray-300  rounded-md shadow-sm">
+                                            <!-- Header -->
+                                            <div
+                                                class="flex items-center justify-between bg-gray-100 px-3 py-2 rounded-t-md">
+                                                <p class="font-semibold text-gray-700">
+                                                    <%= review.author.username %>
+                                                </p>
+                                                <p class="text-sm text-gray-500">
+                                                    <%= new Date(review.createdAt).toLocaleDateString("en-GB") %>
+                                                </p>
+                                            </div>
+
+                                            <!-- Rating Stars -->
+                                            <div class="flex justify-center py-1">
+                                                <div class="starability starability-result"
+                                                    data-rating="<%= review.rating %>">
+                                                </div>
+                                            </div>
+
+                                            <!-- Review Text -->
+                                            <div class="px-4 pb-3 text-gray-700 text-wrap">
+                                                <p>
+                                                    <%= review.reviewText %>
+                                                </p>
+                                            </div>
+
+                                            <div class="px-4 pb-3 flex content-end">
+                                                <% if (currentUser && currentUser._id.equals(review.author._id)) { %>
+                                                    <form
+                                                        action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=delete"
+                                                        method="post">
+                                                        <button
+                                                            class="button-effect bg-gradient-to-l from-red-600 to-red-500 text-sm text-white   px-1.5 py-0.5 rounded-md">Delete</button>
+                                                    </form>
+                                                    <% } %>
+
+                                            </div>
+                                        </div>
+                                        <% } %>
+                                            <% } else { %>
+                                                <p class="text-gray-700">No reviews yet. Be the first to leave a
+                                                    review!</p>
+                                                <% } %>
+
+                            </div>
+
+
+    </div>

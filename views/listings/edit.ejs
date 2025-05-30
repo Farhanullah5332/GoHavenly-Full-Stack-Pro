@@ -1,0 +1,92 @@
+<% layout("/layouts/boilarplate") %>
+
+    <div class="flex justify-center px-10 pb-4 pt-8">
+        <div class="w-full max-w-2xl">
+            <h2 class="text-center mt-4 mb-6 text-2xl font-bold">Edit Listing</h2>
+
+            <form action="/listings/<%= listing._id %>?_method=put" method="post" class="space-y-6"
+                enctype="multipart/form-data">
+                <!-- Title -->
+                <div>
+                    <label for="title" class="block font-semibold mb-2">Title</label>
+                    <input type="text" id="title" name="title" value="<%= listing.title %>"
+                        class="editField"
+                        required minlength="5" maxlength="25" placeholder="Enter title" />
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label for="description" class="block font-semibold mb-2">Description</label>
+                    <textarea id="description" name="description" rows="4" 
+                        class="editField"
+                        required minlength="20" maxlength="200"
+                        placeholder="Enter description"><%=listing.description%></textarea>
+                </div>
+
+                <!-- Image and Category -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Image Upload -->
+                    <div class="md:col-span-2">
+                        <label for="imageInput" class="block font-semibold mb-2">Upload New Image</label>
+                        <input type="file" id="imageInput" name="image" accept="image/jpeg, image/jpg, image/png"
+                            class="editField" />
+                    </div>
+
+                    <!-- Category -->
+                    <div>
+                        <label for="categorySelect" class="block font-semibold mb-2">Category</label>
+                        <select id="categorySelect" name="category"
+                            class="editField"
+                            required>
+                            <option value="<%= listing.category %>" selected disabled>
+                                <%= listing.category %>
+                            </option>
+                            <option value="Trending">Trending</option>
+                            <option value="Rooms">Rooms</option>
+                            <option value="Iconic Cities">Iconic Cities</option>
+                            <option value="Castles">Castles</option>
+                            <option value="Arctic">Arctic</option>
+                            <option value="Camping">Camping</option>
+                            <option value="Farms">Farms</option>
+                            <option value="Beach">Beach</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Price, Location, Country -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Price -->
+                    <div>
+                        <label for="price" class="block font-semibold mb-2">Price</label>
+                        <input type="number" id="price" name="price" value="<%= listing.price %>"
+                            class="editField"
+                            required min="1" max="10000" placeholder="Enter price" />
+                    </div>
+
+                    <!-- Location -->
+                    <div>
+                        <label for="location" class="block font-semibold mb-2">Location</label>
+                        <input type="text" id="location" name="location" value="<%= listing.location %>" 
+                            class="editField"
+                            required placeholder="Enter location" />
+                    </div>
+
+                    <!-- Country -->
+                    <div>
+                        <label for="country" class="block font-semibold mb-2">Country</label>
+                        <input type="text" id="country" name="country" value="<%= listing.country %>" 
+                            class="editField"
+                            required placeholder="Enter country" />
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="flex justify-end">
+                    <button type="submit"
+                        class="button-effect bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold py-2 px-6 rounded-md transition-all duration-300 mb-8">
+                        Edit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>

@@ -1,0 +1,49 @@
+<header class="bg-white shadow-sm sticky top-0 z-10">
+    <nav class="max-w-7xl mx-auto px-3 md:px-8 py-2">
+        <div class=" font-medium flex justify-between items-center ">
+            <div class="flex  grow-3 ">
+                <a href="/listings"> <img src="/images/logo.png" alt="logo" width="45" height="45"></a>
+                <a class="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent text-2xl font-bold self-center"
+                    href="/listings">GoHavenly
+                </a>
+            </div>
+
+            <div class="hidden sm:flex justify-center gap-x-6 md:gap-x-10  grow-7 ">
+                <a href="/listings" class="active nav-item">Home</a>
+                <a href="/listings/new" class="nav-item">New Listing</a>
+                <a href="/listings/about" class="nav-item">About</a>
+            </div>
+
+            <div class="hidden sm:flex justify-end  gap-x-4 grow-3 me-2">
+                <% if (!currentUser) { %>
+                    <a href="/signup" class="nav-item">Sign up</a>
+                    <a href="/login" class="nav-item">Log in</a>
+                    <% } %>
+                        <% if (currentUser) { %>
+                            <a href="/logout" class="nav-item">Log out</a>
+                            <% } %>
+
+            </div>
+            <button id="menu-button" class="sm:hidden focus:outline-none me-2">
+                <i class="fas fa-bars text-gray-700 text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="sm:hidden hidden bg-white w-full">
+            <div class="px-3 pt-3 flex flex-col space-y-2">
+                <a href="/listings" class="active nav-item">Home</a>
+                <a href="/listings/new" class="nav-item">New Listing</a>
+                <a href="/listings/about" class="nav-item">About</a>
+                <hr>
+                <% if (!currentUser) { %>
+                    <a href="/signup" class="nav-item">Sign up</a>
+                    <a href="/login" class="nav-item">Log in</a>
+                    <% } %>
+                        <% if (currentUser) { %>
+                            <a href="/logout" class="nav-item ">Log out</a>
+                            <% } %>
+
+
+            </div>
+    </nav>
+</header>

@@ -1,0 +1,114 @@
+<% layout("/layouts/boilarplate") %>
+
+    <!-- Categories Navigation -->
+    <div class="bg-white border-t border-b border-gray-100 pt-8">
+        <div class="container mx-auto max-w-5xl  py-3 ">
+            <div class="flex justify-around  items-center overflow-x-auto hide-scrollbar space-x-5 ps-5 me-5 pb-2">
+                <a href="#" class="iconBarCat"
+                    onclick="filterByCategory('Trending')">
+
+                    <div class="iconBar">
+                        <i class="fas fa-fire category-icon text-blue-500"></i>
+                    </div>
+                    <span class="iconBarText">Trending</span>
+                </a>
+
+                <a href="#" class="iconBarCat"
+                    onclick="filterByCategory('Rooms')">
+                    <div class="iconBar">
+                        <i class="fas fa-bed category-icon text-blue-500"></i>
+                    </div>
+                    <span class="iconBarText">Rooms</span>
+                </a>
+
+                <a href="#" class="iconBarCat"
+                    onclick="filterByCategory('Iconic Cities')">
+                    <div class="iconBar">
+                        <i class="fas fa-city category-icon text-blue-500"></i>
+                    </div>
+                    <span class="iconBarText">Cities</span>
+                </a>
+
+                <a href="#" class="iconBarCat"
+                    onclick="filterByCategory('Castles')">
+                    <div class="iconBar">
+                        <i class="fas fa-chess-rook category-icon text-blue-500"></i>
+                    </div>
+                    <span class="iconBarText">Castles</span>
+                </a>
+
+                <a href="#" class="iconBarCat"
+                    onclick="filterByCategory('Arctic')">
+                    <div class="iconBar">
+                        <i class="fas fa-snowflake category-icon text-blue-500"></i>
+                    </div>
+                    <span class="iconBarText">Arctic</span>
+                </a>
+
+                <a href="#" class="iconBarCat"
+                    onclick="filterByCategory('Camping')">
+                    <div class="iconBar">
+                        <i class="fas fa-campground category-icon text-blue-500"></i>
+                    </div>
+                    <span class="iconBarText">Camping</span>
+                </a>
+
+                <a href="#" class="iconBarCat"
+                    onclick="filterByCategory('Farms')">
+                    <div class="iconBar">
+                        <i class="fas fa-tractor category-icon text-blue-500"></i>
+                    </div>
+                    <span class="iconBarText">Farms</span>
+                </a>
+
+                <a href="#" class="iconBarCat"
+                    onclick="filterByCategory('Beach')">
+                    <div class="iconBar">
+                        <i class="fas fa-umbrella-beach category-icon text-blue-500"></i>
+                    </div>
+                    <span class="iconBarText">Beach</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main class="container mx-auto max-w-7xl px-5 py-8">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Extraordinary Places to Stay</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <% for (const listing of allListings ) {%>
+                <div class="property-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="<%= listing.image.url %>" alt="Beautiful Property"
+                            class="w-full h-full object-cover image-hover-effect">
+                        <div class="absolute top-4 right-3">
+                            <span class="badge text-xs text-white px-3 py-1 rounded-full font-medium">
+                                <%= listing.category %>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-gray-800 line-clamp-1">
+                                <%= listing.title %>
+                            </h3>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3"><%= listing.location %>, <%= listing.country %></p>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-xl font-bold text-gray-800">&dollar;<%= listing.price %></span>
+                                <span class="text-gray-500 text-sm">/night</span>
+                            </div>
+                           <a href="/listings/<%= listing._id %>">
+                                <button
+                                    class="button-effect bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm px-3 py-1.5 rounded-xl hover:shadow-md transition duration-300">
+                                    View Details
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <% } %>
+        </div>
+    </main>
