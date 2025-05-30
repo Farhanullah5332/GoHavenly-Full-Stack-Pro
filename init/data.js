@@ -12,6 +12,9 @@ const sampleData = [
     location: "Malibu",
     country: "United States",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Parisian Luxury Loft",
@@ -26,6 +29,9 @@ const sampleData = [
     location: "Paris",
     country: "France",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Scottish Highland Castle",
@@ -40,6 +46,9 @@ const sampleData = [
     location: "Scottish Highlands",
     country: "UK",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Alaskan Wilderness Cabin",
@@ -54,6 +63,9 @@ const sampleData = [
     location: "Fairbanks",
     country: "United States",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Tuscany Farm Experience",
@@ -68,6 +80,9 @@ const sampleData = [
     location: "Tuscany",
     country: "Italy",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Mountain View Treehouse",
@@ -82,6 +97,9 @@ const sampleData = [
     location: "Colorado",
     country: "United States",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Tokyo Studio Apartment",
@@ -96,6 +114,9 @@ const sampleData = [
     location: "Tokyo",
     country: "Japan",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Northern Lights Glass Cabin",
@@ -110,6 +131,9 @@ const sampleData = [
     location: "Tromsø",
     country: "Norway",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Sahara Desert Camp",
@@ -124,6 +148,9 @@ const sampleData = [
     location: "Merzouga",
     country: "Morocco",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Amsterdam Canal House",
@@ -138,6 +165,9 @@ const sampleData = [
     location: "Amsterdam",
     country: "Netherlands",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Swiss Alpine Chalet",
@@ -152,6 +182,9 @@ const sampleData = [
     location: "Zermatt",
     country: "Switzerland",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Bali Surf Villa",
@@ -166,6 +199,9 @@ const sampleData = [
     location: "Canggu",
     country: "Indonesia",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "New York Penthouse",
@@ -180,6 +216,9 @@ const sampleData = [
     location: "New York City",
     country: "United States",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Icelandic Geothermal Cabin",
@@ -194,6 +233,9 @@ const sampleData = [
     location: "Reykjanes Peninsula",
     country: "Iceland",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Canadian Lake Cabin",
@@ -208,6 +250,9 @@ const sampleData = [
     location: "Algonquin Park",
     country: "Canada",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Medieval Tower in Tuscany",
@@ -222,6 +267,9 @@ const sampleData = [
     location: "San Gimignano",
     country: "Italy",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Kyoto Traditional Machiya",
@@ -236,6 +284,9 @@ const sampleData = [
     location: "Kyoto",
     country: "Japan",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
 
   {
@@ -251,6 +302,9 @@ const sampleData = [
     location: "Serengeti",
     country: "Tanzania",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Hunza Valley Mountain Retreat",
@@ -265,6 +319,9 @@ const sampleData = [
     location: "Hunza",
     country: "Pakistan",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Skardu Adventure Camp",
@@ -279,6 +336,9 @@ const sampleData = [
     location: "Skardu",
     country: "Pakistan",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Lahore Heritage Haveli",
@@ -293,6 +353,9 @@ const sampleData = [
     location: "Lahore",
     country: "Pakistan",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Karachi Beachfront Villa",
@@ -307,6 +370,9 @@ const sampleData = [
     location: "Karachi",
     country: "Pakistan",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Thar Desert Luxury Tents",
@@ -321,6 +387,9 @@ const sampleData = [
     location: "Tharparkar",
     country: "Pakistan",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Swat Valley Wooden Cottage",
@@ -335,6 +404,9 @@ const sampleData = [
     location: "Swat",
     country: "Pakistan",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Fairy Meadows Cabin",
@@ -349,6 +421,9 @@ const sampleData = [
     location: "Diamer",
     country: "Pakistan",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Islamabad Modern Studio",
@@ -363,6 +438,9 @@ const sampleData = [
     location: "Islamabad",
     country: "Pakistan",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Kalash Valley Cultural Stay",
@@ -377,6 +455,9 @@ const sampleData = [
     location: "Chitral",
     country: "Pakistan",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
   {
     title: "Mohenjo-Daro Archaeo Stay",
@@ -391,6 +472,9 @@ const sampleData = [
     location: "Larkana",
     country: "Pakistan",
     reviews: [],
+    "owner": {
+      "$oid": "68399df3df42bef693495fa6"
+    }
   },
 ];
 module.exports = { data: sampleData };

@@ -99,6 +99,10 @@ app.use("/listings", listings);
 app.use("/listings/:id/reviews", reviews);
 app.use("/", user);
 
+app.all("*", (req, res, next) => {
+  next(new AppError(404, "Page Not Found"));
+});
+
 // Error handler
 app.use((err, req, res, next) => {
   const { statusCode = 500 } = err;

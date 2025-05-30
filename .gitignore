@@ -1,5 +1,5 @@
 .env
 public/css/input.css
 node_modules/
-
-
+init/data.js
+init/index.js
